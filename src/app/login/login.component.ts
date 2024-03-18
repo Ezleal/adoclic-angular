@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  loginError: string = '';
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {}
 
@@ -31,7 +32,9 @@ export class LoginComponent implements OnInit {
         }
       );
     } else {
+      this.loginError = 'Credenciales incorrectas.';
       console.log('Formulario inválido, no se puede iniciar sesión.');
     }
   }
+
 }
