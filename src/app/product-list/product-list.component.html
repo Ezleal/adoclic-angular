@@ -1,27 +1,33 @@
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Filtrar por categoría</mat-label>
-      <mat-select (selectionChange)="filterProductsByCategory($event)">
-        <mat-option value="all">Todas</mat-option>
-        <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+
+<div class="container">
+  <div class="filters">
+    <div style="display: flex; justify-content: space-between;">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Filtrar por categoría</mat-label>
+          <mat-select (selectionChange)="filterProductsByCategory($event)">
+            <mat-option value="all">Todas</mat-option>
+            <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Elementos por página</mat-label>
+          <mat-select (selectionChange)="limitProducts($event)">
+            <mat-option value="all">Todos</mat-option>
+            <mat-option *ngFor="let option of itemsPerPageOptions" [value]="option">{{ option }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-raised-button color="primary" (click)="logout()">Cerrar sesión</button>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <button mat-button color="warn" (click)="logout()">Cerrar sesión</button>
-  </div>
-</div>
 
-<div>
-  <mat-form-field appearance="fill">
-    <mat-label>Elementos por página</mat-label>
-    <mat-select (selectionChange)="limitProducts($event)">
-      <mat-option value="all">Todos</mat-option>
-      <mat-option *ngFor="let option of itemsPerPageOptions" [value]="option">{{ option }}</mat-option>
-    </mat-select>
-  </mat-form-field>
+<div  class="table-container">
+
 <table mat-table [dataSource]="filteredProducts.slice(0, itemsPerPage)">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -55,4 +61,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+</div>
 </div>
