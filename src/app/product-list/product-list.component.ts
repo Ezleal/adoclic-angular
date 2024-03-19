@@ -4,7 +4,7 @@ import { ProductService } from '../product.service';
 import { Product } from '../interface/product.interface';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductDetailModalComponent } from '../product-detail-modal/product-detail-modal.component';
-import { MatDialog } from '@angular/material/dialog'; // Importa MatDialog
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 

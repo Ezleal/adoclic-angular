@@ -1,27 +1,36 @@
-# AdoclicAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+---
 
-## Development server
+# Pruebas Unitarias
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este proyecto contiene pruebas unitarias para los componentes clave de la aplicación. Las pruebas se realizan utilizando el framework de pruebas Jasmine y la herramienta de testing de Angular.
 
-## Code scaffolding
+## Estructura del Proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **src/app/login/login.component.spec.ts**: Contiene las pruebas unitarias para el componente LoginComponent.
+- **src/app/auth.guard.spec.ts**: Contiene las pruebas unitarias para el guard AuthGuard.
+- **src/app/fake-api.interceptor.spec.ts**: Contiene las pruebas unitarias para el interceptor FakeApiInterceptor.
 
-## Build
+## Ejecución de las Pruebas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para ejecutar las pruebas unitarias, sigue estos pasos:
 
-## Running unit tests
+1. Asegúrate de tener todas las dependencias instaladas ejecutando `npm install`.
+2. Ejecuta `ng test` para ejecutar las pruebas unitarias.
+3. Observa los resultados en la consola. Deberías ver una salida indicando si las pruebas pasaron o fallaron.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## LoginComponent
 
-## Running end-to-end tests
+El archivo de pruebas `login.component.spec.ts` contiene las pruebas para el componente LoginComponent. Estas pruebas comprueban la creación del componente, la validación del formulario, el manejo de errores de inicio de sesión, y el comportamiento de redirección después de un inicio de sesión exitoso.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## AuthGuard
 
-## Further help
+El archivo de pruebas `auth.guard.spec.ts` contiene las pruebas para el guard AuthGuard. Estas pruebas comprueban que el guard redirige correctamente a la página de inicio de sesión cuando el usuario no está autenticado.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## FakeApiInterceptor
+
+El archivo de pruebas `fake-api.interceptor.spec.ts` contiene las pruebas para el interceptor FakeApiInterceptor. Estas pruebas comprueban el comportamiento del interceptor al interceptar las peticiones HTTP a la API falsa y manejar las respuestas.
+
+---
+
+Este README proporciona una descripción general de las pruebas unitarias en el proyecto y cómo ejecutarlas, así como detalles específicos sobre las pruebas para cada componente o funcionalidad importante.
