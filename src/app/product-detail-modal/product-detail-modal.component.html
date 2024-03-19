@@ -1,5 +1,7 @@
-
-<mat-dialog-content>
+<mat-dialog-content class="dialog-content">
+  <div class="image-container">
+    <img [src]="product.image" alt="Imagen del producto" class="product-image">
+  </div>
   <h2>{{ product.title }}</h2>
   <p>Categoría: {{ product.category }}</p>
   <p>Precio: {{ product.price }}</p>
